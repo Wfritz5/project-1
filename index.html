@@ -32,203 +32,29 @@ weather of arriving city -->
         <div class="humidity"></div>
         <div class="temp"></div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript">
-          // This is our API key
-          var APIKey = "67bc031d2f43613da054c1c50d4ec84b";
-      
-          // Here we are building the URL we need to query the database
-          var queryURL = "https://api.openweathermap.org/data/2.5/weather?" +
-            "q=texas,Burundi&units=imperial&appid=" + APIKey;
-      
-          // Here we run our AJAX call to the OpenWeatherMap API
-          $.ajax({
-            url: queryURL,
-            method: "GET"
-          })
-            // We store all of the retrieved data inside of an object called "response"
-            .then(function(response) {
-      
-              // Log the queryURL
-              console.log(queryURL);
-      
-              // Log the resulting object
-              console.log(response);
-      
-              // Transfer content to HTML
-              $(".city").html("<h1>" + response.name + " Weather Details</h1>");
-              $(".wind").text("Wind Speed: " + response.wind.speed);
-              $(".humidity").text("Humidity: " + response.main.humidity);
-              $(".temp").text("Temperature (F) " + response.main.temp);
-      
-              // Log the data in the console as well
-              console.log("Wind Speed: " + response.wind.speed);
-              console.log("Humidity: " + response.main.humidity);
-              console.log("Temperature (F): " + response.main.temp);
-            });
 
-            //end of weather api = finished
-        </script>
-  
-
-   <head>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="<!-- path-to-your bootstrap.min.css -->"
-        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="<!-- path-to-your bootstrap-theme.min.css -->"
-        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <style>
-        #attraction-panel {
-            display: none;
-        }
-    </style>
-    <!-- skyscanner widget start -->
-    <div class='widget' data-skyscanner-widget="BasicWidget" data-whitelabeldomain="whitelabeldemo.skyscanner.net"></div>
-
-    <script src="https://widgets.skyscanner.net/widget-server/js/loader.js"></script>
-    <!-- skyscanner widget end -->
-</head>
-
-<body>
+  <!-- search -->
+      <div class="container">
+              <div class="row">
+                      <div class="col-md-4"></div>
+                      <div class="col-md-4">
+                          <form>
+                              <input type="text" id="search" placeholder="Search All">
+                          </form>
+                      </div>
+                      <button type="submit" class="btn btn-default" id="run-search">
+                          <i class="fa fa-search"></i> Search</button>
     
-
-    <div class="container">
-            <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
-                        <form>
-                            <input type="text" id="destination" placeholder="Zomato">
-                        </form>
-                    </div>
-                    <button type="submit" class="btn btn-default" id="run-search">
-                        <i class="fa fa-search"></i> Search</button>
+                      <div class="col-md-4"></div>
+                      <!-- end search -->
   
-                    <div class="col-md-4"></div>
-        <div class="row">
-            <div class="col-xs-6">
-                <div id='events-panel' class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Events</h3>
-                    </div>
+              <!-- skyscanner widget start -->
+              <div class='widget' data-skyscanner-widget="BasicWidget" data-whitelabeldomain="whitelabeldemo.skyscanner.net"></div>
+          
+              <script src="https://widgets.skyscanner.net/widget-server/js/loader.js"></script>
+              <!-- skyscanner widget end -->
 
-                    <div class="panel-footer">
-                        <nav>
-                            <ul class="pager">
-                                <li id="prev" class="previous"><a href="#"><span aria-hidden="true">&larr;</span></a>
-                                </li>
-                                <li id="next" class="next"><a href="#"><span aria-hidden="true">&rarr;</span></a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-
-                <div id='attraction-panel' class="panel panel-primary">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Attraction</h3>
-                    </div>
-                    <div id="attraction" class="panel-body">
-                        <h4 class="list-group-item-heading">Attraction title</h4>
-                        <img class="col-xs-12" src="">
-                        <p id="classification"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
-        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
-    </script>
-    <script src="app.js"></script>
-</body>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
-<script src="javascript.js"></script>
-</body>
-
-   <head>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="<!-- path-to-your bootstrap.min.css -->" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="<!-- path-to-your bootstrap-theme.min.css -->" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-
-    <style>
-      #attraction-panel {
-        display:none;
-      }
-    </style>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  </head>
-
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-6">
-        <div id='events-panel' class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Events</h3>
-          </div>
-          <div class="panel-body">
-            <div id="events" class="list-group">
-              <a href="#" class="list-group-item">
-                <h4 class="list-group-item-heading">Event title</h4>
-                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p class="venue"></p>
-              </a>
-              <a href="#" class="list-group-item">
-                <h4 class="list-group-item-heading">Event title</h4>
-                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p class="venue"></p>
-              </a>
-              <a href="#" class="list-group-item">
-                <h4 class="list-group-item-heading">Event title</h4>
-                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p class="venue"></p>
-              </a>
-              <a href="#" class="list-group-item">
-                <h4 class="list-group-item-heading">Event title</h4>
-                <p class="list-group-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <p class="venue"></p>
-              </a>
-            </div>
-          </div>
-          <div class="panel-footer">
-            <nav>
-              <ul class="pager">
-                <li id="prev" class="previous"><a href="#"><span aria-hidden="true">&larr;</span></a></li>
-                <li id="next" class="next"><a href="#"><span aria-hidden="true">&rarr;</span></a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        
-        <div id='attraction-panel' class="panel panel-primary">
-          <div class="panel-heading">
-            <h3 class="panel-title">Attraction</h3>
-          </div>
-          <div id="attraction" class="panel-body">
-            <h4 class="list-group-item-heading">Attraction title</h4>
-            <img class="col-xs-12" src="">
-            <p id="classification"></p>
-          </div>
-        </div>
-        </div>
-      </div>
-    </div>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  
 
 <script src="app.js"></script>
 </body>
