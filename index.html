@@ -8,6 +8,7 @@ search for all events inbetween the two selected dates.
 prepend to the page flight info and events with a max of 10 (add pages)
 add a "see more" button, open new tab to ticketmaster
 weather of arriving city -->
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,47 +16,63 @@ weather of arriving city -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
 
-    <!-- weather api start -->
-        <div class="city"></div>
-        <div class="wind"></div>
-        <div class="humidity"></div>
-        <div class="temp"></div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- search -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 id=mainTitle>Search for a City!</h1>
+            </div>
+            <div class="col-md-6">
+                <div class='widget' data-skyscanner-widget="BasicWidget"
+                    data-whitelabeldomain="whitelabeldemo.skyscanner.net">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <form>
+                    <input type="text" id="search" placeholder="Search All">
+                </form>
+            </div>
+            <button type="submit" class="btn btn-default" id="run-search">
+                <i class="fa fa-search"></i> Search</button>
 
-  <!-- search -->
-      <div class="container">
-              <div class="row">
-                      <div class="col-md-4"></div>
-                      <div class="col-md-4">
-                          <form>
-                              <input type="text" id="search" placeholder="Search All">
-                          </form>
-                      </div>
-                      <button type="submit" class="btn btn-default" id="run-search">
-                          <i class="fa fa-search"></i> Search</button>
-    
-                      <div class="col-md-4"></div>
-                      <!-- end search -->
-  
-              <!-- skyscanner widget start -->
-              <div class='widget' data-skyscanner-widget="BasicWidget" data-whitelabeldomain="whitelabeldemo.skyscanner.net"></div>
-          
-              <script src="https://widgets.skyscanner.net/widget-server/js/loader.js"></script>
-              <!-- skyscanner widget end -->
+            <div class="col-md-4"></div>
+        </div>
 
-  
 
-<script src="app.js"></script>
+        <!-- skyscanner widget end -->
+        
+        <!-- weather api start -->
+        
+        <div class="row">
+            
+            <script src="https://widgets.skyscanner.net/widget-server/js/loader.js"></script>
+            
+            <div class="col-md-4" id="weather">8 day forecast (starts today)</div>
+            <div class="col-md-4" id="events">Upcoming Events</div>
+            <div class="col-md-4" id="food">Hot Restaurants in the area!</div>
+        </div>
+        
+    </div>
+
+
+
+
+
+    <script src="./assets/javascript/app.js></script>
 </body>
+
 </html>
